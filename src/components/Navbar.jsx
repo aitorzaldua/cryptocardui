@@ -3,7 +3,7 @@ import { HiMenuAlt4 } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useState } from 'react';
 
-import logo from '../../images/logoBridge.png';
+import logo from '../../images/bridge.png';
 
 
 const Navbar = () => {
