@@ -24,6 +24,19 @@ const TransactionCard = ({ addressTo, addressFrom, timestamp, message, keyword, 
             <p className='text-white text-base'>To: { shortenAddress(addressTo) } </p>
           </a>
           <p className='text-white text-base'>Amount: { amount } </p>
+
+          {keyword ? (
+            <>
+              <br />
+              <p className='text-white text-base'> Keyword: { keyword } </p>
+            </>
+          ) : (
+            <>
+            <br />
+            <p className='text-white text-base'> No Keyword </p>
+          </>
+          )}
+
           {message ? (
             <>
               <br />
@@ -51,9 +64,9 @@ const Transactions = () => {
     <div className='flex w-full justify-center items-center 2xl:pc-20 gradient-bg-transactions'>
       <div className='flex flex-col md:p-12 py-12 px-4'>
         {currentAccount ? (
-          <h3 className='text-white text-3xl text-center my-2'>Latest Transactions</h3>
+          <h3 className='text-white text-3xl text-center my-2'>Your Transactions on Mumbai</h3>
         ) : (
-          <h3 className='text-white text-3xl text-center my-2'>Connect Your Wallet to see The Latest Transactions</h3>
+          <h3 className='text-white text-3xl text-center my-2'>Connect Your Wallet to see your Transactions</h3>
         )
         }
 

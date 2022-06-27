@@ -12,7 +12,7 @@ import { shortenAddress } from "../utils/shortenAddress";
 
 
 const ServiceCard = ({color, title, icon, subtitle}) => (
-  <div className='flex flex-row justtify-start items-center white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl'>
+  <div className='flex flex-row justtify-start items-center white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl hover:bg-[#383f51]'>
     <div className={`w-10 h-10 rounded-full flex justify-center items-center ${color}`}>
       {icon}
     </div>
@@ -68,7 +68,7 @@ const Welcome = () => {
   /* End of Ethereum functions */
 
   return (
-    <div className="flex w-full justify-center items-center">
+    <div className="flex w-full justify-center items-center" id='transfer'>
       <div className="flex mf:flex-row flex-col items-start justify-center md:pl-20  2xl:pl-64 pb-12 px-4">
         <div className="flex flex-1 justify-start items-start flex-col max-w-lg mf:mr-10">
           <h1 className="text-3xl sm:text-5xl text-white py-1">

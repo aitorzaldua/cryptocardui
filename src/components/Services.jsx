@@ -5,7 +5,7 @@ import metamask from '../utils/assets/metmaskLogo.png';
 import bridge from '../utils/assets/bridgeLogo.png';
 
 const ServiceCard = ({color, title, icon, subtitle}) => (
-  <div className='flex flex-row justtify-start items-center white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl'>
+  <div className='flex flex-row justtify-start items-center white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl hover:bg-[#383f51]'>
     <div className={`w-10 h-10 rounded-full flex justify-center items-center ${color}`}>
       {icon}
     </div>
@@ -63,9 +63,7 @@ const Services = () => {
           title = 'Faster transactions than ever.'
           icon = {<img src={bridge} alt="logo"/>} 
           subtitle = {<a
-            href="https://mumbaifaucet.com/"
-            target="_blank"
-            rel="noreferrer"
+            href="#transfer"
           >
             ◦ Select the address in Metamask in case you have more than one. Select, also in Metamask, the Mumbai network. <br />
             ◦ Connect your wallet to Crypto Transfer. Your address will be displayed on the Crypto card.<br />
