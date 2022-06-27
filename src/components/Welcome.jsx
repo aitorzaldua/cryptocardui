@@ -3,11 +3,25 @@ import { AiFillPlayCircle } from "react-icons/ai";
 import { GiWallet } from "react-icons/gi"
 import { SiEthereum } from "react-icons/si";
 import { BsInfoCircle } from "react-icons/bs";
+import matic from "../utils/assets/maticlogo.png"
 
 import { useContext } from "react";
 import { TransactionContext } from "../context/TransactionContext";
 import { Loader } from "./";
 import { shortenAddress } from "../utils/shortenAddress";
+
+
+const ServiceCard = ({color, title, icon, subtitle}) => (
+  <div className='flex flex-row justtify-start items-center white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl'>
+    <div className={`w-10 h-10 rounded-full flex justify-center items-center ${color}`}>
+      {icon}
+    </div>
+    <div className='ml-5 flex flex-col flex-1'>
+      <h1 className='mt-2 text-white text-lg'>{title}</h1>
+      <p className='mt-2 text-white text-sm md:w-9/12'>{subtitle}</p>
+    </div>
+  </div>
+)
 
 /* Special Components */
 
@@ -56,13 +70,12 @@ const Welcome = () => {
   return (
     <div className="flex w-full justify-center items-center">
       <div className="flex mf:flex-row flex-col items-start justify-center md:pl-20  2xl:pl-64 pb-12 px-4">
-        <div className="flex flex-1 justify-start items-start flex-col mf:mr-10">
+        <div className="flex flex-1 justify-start items-start flex-col max-w-lg mf:mr-10">
           <h1 className="text-3xl sm:text-5xl text-white py-1">
             Send Crypto <br /> across the world
           </h1>
           <p className="text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base">
-            Connect your wallet, select the cryprocurrency in your wallet and
-            send crypto in seconds.
+          Get started in decentralized finance. Obtain free crypto from Polygon's tesnet (Mumbai), connect your wallet and send money to anyone in the world in seconds.
           </p>
           {!currentAccount && (
             <button
@@ -82,22 +95,22 @@ const Welcome = () => {
             </p>
           )}
 
-          <div className="grid sm:grid-cols-3 grid-cols-2 w-full mt-10">
-            <div className={`rounded-tl-2xl ${companyCommonStyles}`}>
-              Reliability
-            </div>
-            <div className={companyCommonStyles}>Security</div>
-            <div className={`sm:rounded-tr-2xl ${companyCommonStyles}`}>
-              Multichain
-            </div>
-            <div className={`sm:rounded-bl-2xl ${companyCommonStyles}`}>
-              Web 3.0
-            </div>
-            <div className={companyCommonStyles}>Low Fees</div>
-            <div className={`rounded-br-2xl ${companyCommonStyles}`}>
-              Blockchain
-            </div>
-          </div>
+          
+<div className='flex-1 flex flex-col justify-start items-center mt-6'>
+        <ServiceCard 
+          color = 'bg-white'
+          title = 'Polygon Mumbai Blockchain'
+          icon = {<img src={matic} alt="logo" fontSize={21} className = 'text-white' />} 
+          subtitle = {<a
+            href="https://mumbai.polygonscan.com/address/0x789ac75c3070c801833f5eec53c6984b2bddd4c5"
+            target="_blank"
+            rel="noreferrer"
+          >
+            The Transfers System rules under contract: 0x789AC75C3070c801833F5EeC53C6984b2BDDd4C5
+          </a>}
+        />
+        
+      </div>
         </div>
       </div>
 
@@ -105,10 +118,10 @@ const Welcome = () => {
         <div className="p-3 flex justify-end items-start flex-col rounded-xl h-40 sm:w-72 w-full my-5 eth-card white-glassmorphism ">
           <div className="flex justify-between flex-col w-full h-full">
             <div className="flex justify-between items-start">
-              <div className="w-10 h-10 rounded-full border-2 border-white flex justify-center items-center">
-                <SiEthereum fontSize={21} color="#fff" />
+              <div className="w-10 h-10 rounded-full border-2 border-purple-500/100 flex justify-center items-center">
+              <img src={matic} alt="logo" className="w-48 cursor-pointer" />
               </div>
-              <BsInfoCircle fontSize={17} color="#fff" />
+              {/* <BsInfoCircle fontSize={17} color="#fff" /> */}
             </div>
             <div>
               <p className="text-white font-light text-sm">
@@ -129,13 +142,13 @@ const Welcome = () => {
             handleChange={handleChange}
           />
           <Input
-            placeholder="Amount (ETH)"
+            placeholder="Amount (MATIC)"
             name="amount"
             type="number"
             handleChange={handleChange}
           />
           <Input
-            placeholder="Keyword (Gif)"
+            placeholder="Transaction Keyword"
             name="keyword"
             type="text"
             handleChange={handleChange}
