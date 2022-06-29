@@ -14,37 +14,31 @@ const TransactionCard = ({ addressTo, addressFrom, timestamp, message, keyword, 
       sm:min-w-[270px]
       sm:max-w-[300px]
       flex-col p-3 rounded-md hover:shadow-2xl
-    '>
+    ' id='transactions'>
       <div className='flex flex-col items-center w-full mt-3'>
         <div className='w-full mb-6 p-2'>
-          <a href={`https://rinkeby.etherscan.io/address/${addressFrom}`} target='_blank' rel='noopener noreferrer'>
-            <p className='text-white text-base'>From: { shortenAddress(addressFrom) } </p>
+          <a href={`https://mumbai.polygonscan.com/address/${addressFrom}`} target='_blank' rel='noopener noreferrer'>
+            <p className='text-white text-base hover:text-[#37c7da]'>From: { shortenAddress(addressFrom) } </p>
           </a>
-          <a href={`https://rinkeby.etherscan.io/address/${addressTo}`} target='_blank' rel='noopener noreferrer'>
-            <p className='text-white text-base'>To: { shortenAddress(addressTo) } </p>
+          <a href={`https://mumbai.polygonscan.com/address/${addressTo}`} target='_blank' rel='noopener noreferrer'>
+            <p className='text-white text-base hover:text-[#37c7da]'>To: { shortenAddress(addressTo) } </p>
           </a>
-          <p className='text-white text-base'>Amount: { amount } </p>
-
+          <p className='text-white text-base'>Amount: { amount } MATIC</p>
           {keyword ? (
             <>
-              <br />
               <p className='text-white text-base'> Keyword: { keyword } </p>
             </>
           ) : (
             <>
-            <br />
             <p className='text-white text-base'> No Keyword </p>
           </>
           )}
-
           {message ? (
             <>
-              <br />
               <p className='text-white text-base'> Message: { message } </p>
             </>
           ) : (
             <>
-            <br />
             <p className='text-white text-base'> No message </p>
           </>
           )}

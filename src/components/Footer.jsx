@@ -1,31 +1,37 @@
-import logo from '../../images/logo.png';
+import './az.css';
+
+import {BsLinkedin} from 'react-icons/bs';
+import {IoLogoTwitter} from 'react-icons/io';
+import {BsGithub} from 'react-icons/bs';
+import {AiFillHeart} from 'react-icons/ai';
+
 
 
 const Footer = () => {
   return (
-    <div className='w-full flex md:justify-center justify-between items-center flex-col p-4 gradient-bg-footer'>
-      <div className='w-full flex sm:flex-row flex-col justify-between items-center my-4 '>
-        <div className='flex flex-[0.5] justify-center items-center'>
-          <img src={logo} alt='logo_image' className='w-32'></img>
-        </div>
-        <div className='flex flex-1 justify-evenly items-center flex-wrap sm:mt-0 mt-5 w-full'>
-          <p className='text-white text-base text-center mx-2 cursor-pointer'>Market</p>
-          <p className='text-white text-base text-center mx-2 cursor-pointer'>Exchange</p>
-          <p className='text-white text-base text-center mx-2 cursor-pointer'>Tutorials</p>
-          <p className='text-white text-base text-center mx-2 cursor-pointer'>Wallets</p>
-        </div>
-      </div>
-      <div className='flex justify-center items-center flex-col'>
-        <p className='text-white text-sm text-center'>This is a Draft Digital Cryto Card.</p>
-        <p className='text-white text-sm text-center flex flex-row'>Made with 💚 by MG. Built with React, Tailwind CSS & Ether.js. Deployed to Netlify.</p>
-      </div>
-      <div className='sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-5'/>
-      <div className="sm:w-[90%] w-full flex justify-between items-center mt-3">
-      <p className="text-white text-left text-xs">info@draftdigital.org</p>
-      <p className="text-white text-right text-xs">All rights reserved</p>
-    </div>
-    </div>
-  )
+    <section id='aboutMe' className='AboutMe'>
+    <p className='footer__logo'>aitor.zaldua@draftdigital.org</p>
+
+    <ul className='permalinks'>
+      <li><a href='#transfers'>Transfers</a></li>
+      <li><a href='#instructions'>Instructions</a></li>
+      <li><a href='#transactions'>Transactions</a></li>
+      <li><a href='https://aitorzaldua.netlify.app/' target="_blank" rel="noreferrer">MyPortfolio</a></li>
+    </ul>
+
+  <div className='footer__socials'>
+    <a href='https://www.linkedin.com/in/aitor-zaldua/' target="_blank" rel="noreferrer"><BsLinkedin/></a>
+    <a href='https://twitter.com' target="_blank" rel="noreferrer"><IoLogoTwitter/></a>
+    <a href='https://github.com/aitorzaldua' target="_blank" rel="noreferrer"><BsGithub/></a>
+  </div>
+
+  <div className='footer__copyright'>
+    <small>Designed with 💚 by MG based on JavaScriptMastery.</small>
+  </div>
+
+
+  </section>
+)
 }
 
 export default Footer;

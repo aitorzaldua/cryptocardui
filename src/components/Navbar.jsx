@@ -10,9 +10,9 @@ const Navbar = () => {
 
   const Menu = () => (
     <>
-        <div><a href="#Home">Home</a></div>
-        <div><a href="#Latest">Transactions</a></div>
-        <div><a href="#Footer">About me</a></div>
+        <div><a href="#instructions">Instructions</a></div>
+        <div><a href="#transactions">Transactions</a></div>
+        <div><a href="#aboutMe">About Me</a></div>
     </>
     )
 
